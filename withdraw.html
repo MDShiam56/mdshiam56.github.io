@@ -31,6 +31,7 @@
             max-width: 420px; width: 100%;
             border: 1px solid rgba(29, 204, 112, 0.3);
             animation: slideUp 0.6s ease-out;
+            margin-top: 20px;
         }
 
         h2 { color: #1dcc70; text-align: center; margin-bottom: 25px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
@@ -60,17 +61,7 @@
         }
         
         .btn-withdraw:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(29, 204, 112, 0.5); }
-        .btn-withdraw:active { transform: scale(0.97); }
-
-        .back-btn { text-decoration: none; color: #1dcc70; font-size: 14px; margin-bottom: 15px; display: block; align-self: flex-start; }
-        
-        /* অ্যাড স্পেসের জন্য ছোট স্টাইল */
-        .ad-container {
-            width: 100%;
-            text-align: center;
-            margin-bottom: 15px;
-            min-height: 50px;
-        }
+        .back-btn { text-decoration: none; color: #1dcc70; font-size: 14px; margin-bottom: 10px; display: block; align-self: flex-start; }
     </style>
 </head>
 <body>
@@ -79,11 +70,6 @@
         <a href="index.html" class="back-btn">← Back to Dashboard</a>
 
         <div class="card">
-            
-            <div class="ad-container">
-                 <p style="font-size: 10px; color: #555; margin: 0;">Sponsored Ad</p>
-                 </div>
-
             <h2>Withdraw</h2>
             
             <div class="balance-view">
@@ -128,12 +114,11 @@
         const db = getDatabase(app);
 
         let userBalance = 0;
-        let userData = null;
 
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 onValue(ref(db, 'users/' + user.uid), (snap) => {
-                    userData = snap.val();
+                    const userData = snap.val();
                     if (userData) {
                         userBalance = parseFloat(userData.balance) || 0;
                         document.getElementById('current-bal').innerText = userBalance.toLocaleString();
@@ -175,7 +160,7 @@
                     timestamp: new Date().toLocaleString()
                 });
 
-                alert("উইথড্র রিকোয়েস্ট সফল হয়েছে! ২৪ ঘণ্টার মধ্যে পেমেন্ট পাবেন।");
+                alert("উইথড্র রিকোয়েস্ট সফল হয়েছে!");
                 window.location.href = "index.html";
 
             } catch (error) {
@@ -184,10 +169,7 @@
                 btn.innerText = "Confirm Withdrawal";
             }
         }
-
         document.getElementById('submit-btn').onclick = submitWithdraw;
     </script>
-    src="https://pl28544750.effectivegatecpm.com/b8/0a/e0/b80ae00f014f59f727a4b94dc3a193eb.js"></script>
 </body>
 </html>
-
