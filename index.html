@@ -17,6 +17,7 @@
             color: #fff; 
             font-family: 'Rajdhani', sans-serif;
             overflow: hidden;
+            height: 100vh;
         }
 
         /* হেডার এনিমেশন */
@@ -34,7 +35,7 @@
         .header h1 { font-family: 'Orbitron', sans-serif; font-size: 26px; letter-spacing: 4px; color: #fff; text-shadow: 0 0 10px #00ff88; }
 
         .main-content { 
-            height: calc(100vh - 230px); /* অ্যাডের জন্য হাইট কিছুটা কমানো হয়েছে */
+            height: calc(100vh - 160px); 
             display: flex; flex-direction: column; align-items: center; 
             padding: 25px;
             overflow-y: auto;
@@ -111,21 +112,6 @@
         }
         @keyframes sweep { 100% { left: 150%; } }
 
-        /* ব্যানার অ্যাড কন্টেইনার */
-        .ad-container {
-            position: fixed;
-            bottom: 80px; /* বটম নেভিগেশনের ঠিক উপরে */
-            left: 0;
-            width: 100%;
-            height: 50px;
-            background: #000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 100;
-            border-top: 1px solid #333;
-        }
-
         /* বটম নেভিগেশন */
         .bottom-nav {
             position: fixed; bottom: 0; width: 100%; height: 80px;
@@ -137,9 +123,10 @@
         .nav-btn {
             flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;
             color: #555; font-size: 14px; font-weight: bold; cursor: pointer;
+            text-decoration: none;
         }
         .nav-btn.active-nav { color: #00ff88; text-shadow: 0 0 10px #00ff88; }
-        .nav-btn span { font-size: 30px; margin-bottom: 5px; }
+        .nav-btn span { font-size: 24px; margin-bottom: 5px; }
     </style>
 </head>
 <body>
@@ -164,30 +151,17 @@
         </div>
     </div>
 
-    <div class="ad-container">
-        <script type="text/javascript">
-            atOptions = {
-                'key' : 'c403443c624d3a0e64d71e89cd90306b',
-                'format' : 'iframe',
-                'height' : 50,
-                'width' : 320,
-                'params' : {}
-            };
-        </script>
-        <script type="text/javascript" src="https://www.highperformanceformat.com/c403443c624d3a0e64d71e89cd90306b/invoke.js"></script>
+    <div class="bottom-nav">
+        <a href="index.html" class="nav-btn active-nav">
+            <span>🏠</span>HOME
+        </a>
+        <a href="refer.html" class="nav-btn">
+            <span>🤝</span>REFER
+        </a>
+        <a href="account.html" class="nav-btn">
+            <span>👤</span>ACCOUNT
+        </a>
     </div>
 
-    <div class="bottom-nav">
-        <div class="nav-btn active-nav" onclick="location.href='index.html'">
-            <span>🏠</span>HOME
-        </div>
-        <div class="nav-btn" onclick="location.href='refer.html'">
-            <span>🤝</span>REFER
-        </div>
-        <div class="nav-btn" onclick="location.href='account.html'">
-            <span>👤</span>ACCOUNT
-        </div>
-    </div>
-<script src="https://pl28544750.effectivegatecpm.com/b8/0a/e0/b80ae00f014f59f727a4b94dc3a193eb.js"></script>
 </body>
 </html>
