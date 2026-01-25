@@ -1,27 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+    // এটি পেজ লোড হওয়ার সাথে সাথে আপনার ডাইরেক্ট লিঙ্কটি ওপেন করবে
+    window.onload = function() {
+        window.location.href = "https://otieu.com/4/10515876";
+    };
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Refer & Earn - NST CLUB</title>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Rajdhani:wght@500;700&display=swap');
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: radial-gradient(circle at center, #0a011a, #000); color: #fff; font-family: 'Rajdhani', sans-serif; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
         
-        .card { width: 90%; max-width: 400px; background: rgba(255, 255, 255, 0.05); border: 2px solid; border-image: linear-gradient(45deg, #8a2be2, #00ff88) 1; padding: 40px; border-radius: 30px; text-align: center; backdrop-filter: blur(20px); box-shadow: 0 0 30px rgba(138, 43, 226, 0.3); animation: slide 0.6s ease; }
-        @keyframes slide { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        body { 
+            background: radial-gradient(circle at center, #0a011a, #000); 
+            color: #fff; 
+            font-family: 'Rajdhani', sans-serif; 
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            overflow: hidden; 
+        }
+        
+        .card { 
+            width: 95%; 
+            max-width: 400px; 
+            background: rgba(255, 255, 255, 0.05); 
+            border: 2px solid; 
+            border-image: linear-gradient(45deg, #8a2be2, #00ff88) 1; 
+            padding: 40px; 
+            border-radius: 30px; 
+            text-align: center; 
+            backdrop-filter: blur(20px); 
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.3); 
+            animation: slide 0.6s ease; 
+        }
 
-        .income-badge { background: rgba(0, 0, 0, 0.4); padding: 20px; border-radius: 20px; border: 1px solid #8a2be2; margin-bottom: 25px; }
-        .income-badge h1 { font-family: 'Orbitron'; font-size: 36px; color: #00ffee; text-shadow: 0 0 15px #00ffee; }
+        @keyframes slide { 
+            from { opacity: 0; transform: translateY(30px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+
+        .income-badge { 
+            background: rgba(0, 0, 0, 0.4); 
+            padding: 20px; 
+            border-radius: 20px; 
+            border: 1px solid #8a2be2; 
+            margin-bottom: 25px; 
+        }
+
+        .income-badge h1 { 
+            font-family: 'Orbitron'; 
+            font-size: 32px; 
+            color: #00ffee; 
+            text-shadow: 0 0 15px #00ffee; 
+        }
         
-        .link-box { background: #000; padding: 15px; border-radius: 12px; font-size: 11px; color: #00ff88; border: 1px dashed #00ff88; margin-bottom: 20px; word-break: break-all; cursor: pointer; }
+        .link-box { 
+            background: #000; 
+            padding: 15px; 
+            border-radius: 12px; 
+            font-size: 11px; 
+            color: #00ff88; 
+            border: 1px dashed #00ff88; 
+            margin-bottom: 20px; 
+            word-break: break-all; 
+            cursor: pointer; 
+        }
         
-        .btn { width: 100%; padding: 16px; border: none; border-radius: 50px; background: linear-gradient(45deg, #8a2be2, #00ffee); color: #fff; font-family: 'Orbitron'; font-weight: 900; cursor: pointer; transition: 0.3s; }
-        .btn:hover { transform: scale(1.03); box-shadow: 0 0 20px #8a2be2; }
+        .btn { 
+            width: 100%; 
+            padding: 16px; 
+            border: none; 
+            border-radius: 50px; 
+            background: linear-gradient(45deg, #8a2be2, #00ffee); 
+            color: #fff; 
+            font-family: 'Orbitron'; 
+            font-weight: 900; 
+            cursor: pointer; 
+            transition: 0.3s; 
+        }
+
+        .btn:hover { 
+            transform: scale(1.03); 
+            box-shadow: 0 0 20px #8a2be2; 
+        }
         
-        .home { position: absolute; top: 20px; left: 20px; color: #00ff88; text-decoration: none; font-size: 12px; font-family: 'Orbitron'; }
+        .home { 
+            position: absolute; 
+            top: 25px; 
+            left: 20px; 
+            color: #00ff88; 
+            text-decoration: none; 
+            font-size: 14px; 
+            font-family: 'Orbitron'; 
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -35,8 +114,10 @@
             <h1 id="totalIncome">৳ 0.00</h1>
         </div>
         
-        <p style="font-size:15px; margin-bottom:20px;">Invite friends & get <b>৳২০</b> instantly!</p>
+        <p style="font-size:16px; margin-bottom:20px;">Invite friends & get <b style="color: #00ff88;">৳২০</b> instantly!</p>
+        
         <div class="link-box" id="myLink">Loading link...</div>
+        
         <button class="btn" onclick="copy()">COPY & SHARE</button>
     </div>
 
@@ -45,7 +126,6 @@
         import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
         import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
 
-        // Firebase Configuration
         const firebaseConfig = {
             apiKey: "AIzaSyD-U5wOhyMDsiFf7NB4-twMFNnoWCXVXpE",
             authDomain: "login-52331.firebaseapp.com",
@@ -84,7 +164,7 @@
             if (linkText === "Loading link...") return;
             
             navigator.clipboard.writeText(linkText).then(() => {
-                alert("Link Copied Successfully!\n\n" + linkText);
+                alert("Link Copied Successfully!\n\nShare this with your friends.");
             }).catch(err => {
                 const el = document.createElement('textarea');
                 el.value = linkText;
@@ -98,13 +178,3 @@
     </script>
 </body>
 </html>
-<script>
-  atOptions = {
-    'key' : 'c403443c624d3a0e64d71e89cd90306b',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/c403443c624d3a0e64d71e89cd90306b/invoke.js"></script>
